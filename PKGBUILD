@@ -3,14 +3,14 @@
 _basename="xf86-video-dummy"
 pkgname="${_basename//xf86/xlibre}"
 pkgver=0.4.1.1
-pkgrel=1
+pkgrel=2
 pkgdesc="XLibre dummy video driver"
 arch=('aarch64' 'x86_64')
 url="https://github.com/X11Libre/${_basename}"
 license=('MIT AND X11')
 depends=('glibc')
 makedepends=('systemd' 'xlibre-server-devel' 'xorgproto' 'X-ABI-VIDEODRV_VERSION=28.0')
-provides=("${_basename}")
+# provides=("${_basename}")
 conflicts=("${_basename}" 'xorg-server<1.20.0' 'X-ABI-VIDEODRV_VERSION<28' 'X-ABI-VIDEODRV_VERSION>=29')
 groups=('xlibre-drivers')
 _pkgsrc="${_basename}-xlibre-${_basename}-${pkgver}"
