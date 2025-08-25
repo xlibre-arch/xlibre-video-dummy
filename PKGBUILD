@@ -1,21 +1,22 @@
 # Maintainer:  Vitalii Kuzhdin <vitaliikuzhdin@gmail.com>
+# Maintainer:  artist for Artix Linux
 
 _basename="xf86-video-dummy"
 pkgname="${_basename//xf86/xlibre}"
-pkgver=0.4.1.1
-pkgrel=2
+pkgver=0.4.1.2
+pkgrel=1
 pkgdesc="XLibre dummy video driver"
 arch=('aarch64' 'x86_64')
 url="https://github.com/X11Libre/${_basename}"
 license=('MIT AND X11')
 depends=('glibc')
-makedepends=('systemd' 'xlibre-server-devel' 'xorgproto' 'X-ABI-VIDEODRV_VERSION=28.0')
-# provides=("${_basename}")
-conflicts=("${_basename}" 'xorg-server<1.20.0' 'X-ABI-VIDEODRV_VERSION<28' 'X-ABI-VIDEODRV_VERSION>=29')
+makedepends=('systemd' 'xlibre-xserver-devel' 'xorgproto' 'X-ABI-VIDEODRV_VERSION=28.0')
+provides=("${_basename}")
+conflicts=("${_basename}" 'xorg-xxserver<1.20.0' 'X-ABI-VIDEODRV_VERSION<28' 'X-ABI-VIDEODRV_VERSION>=29')
 groups=('xlibre-drivers')
 _pkgsrc="${_basename}-xlibre-${_basename}-${pkgver}"
 source=("${_pkgsrc}.tar.gz::${url}/archive/refs/tags/xlibre-${_basename}-${pkgver}.tar.gz")
-b2sums=('f15f8b5461a56dbff429266873e2026b454d8d05547cd9b154f818d317d5ad8ed0cb8e708baa871733aa6a977319e240038b7bbacb8494ff68073d21665faa8d')
+b2sums=('e88c1d602042d1a27964517d8457bb0fa4655ba4fe3491bd3bac820c3a8af4f6a11a96b952e3b90ab7bba91b23772d91244f71c772c01548b93e3eb90cf583bf')
 
 build() {
   # Since pacman 5.0.2-2, hardened flags are now enabled in makepkg.conf
