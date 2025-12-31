@@ -4,7 +4,7 @@ pkgname=xlibre-video-dummy
 pkgver=25.0.0
 pkgrel=5
 pkgdesc="XLibre fork of X.Org dummy video driver"
-arch=(x86_64)
+arch=(x86_64 aarch64)
 _pkgname="${pkgname//xlibre/xf86}"
 url="https://github.com/X11Libre/${_pkgname}"
 depends=("xlibre-xserver>=${pkgver%.*}" 'glibc')
